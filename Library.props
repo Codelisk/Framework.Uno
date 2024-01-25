@@ -1,0 +1,9 @@
+<Project>
+	<Import Project="Library.targets" Condition="exists('Library.targets')" />
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+
+  <ItemGroup>
+  </ItemGroup>
+</Project>
