@@ -1,4 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Framework.ApiClient.Models;
+using Framework.ApiClient.Repositories;
+using Framework.ApiClient.Services;
+using Framework.UnoNative.Services;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
@@ -6,8 +10,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Framework.ApiClient;
 
-namespace Framework.Uno
+namespace Framework.UnoNative
 {
     public partial class BaseApp : PrismApplication
     {
@@ -75,7 +80,7 @@ namespace Framework.Uno
                             credentials.TryGetValue("email", out var email);
                             credentials.TryGetValue("password", out var password);
                             var authenticated = await auth.LoginAsync(new AuthPayload { email = email, password = password });
-                            tokenProvider.UpdateCurrentToken(authenticated.accessToken, authenticated.refreshToken);
+                            tokenProvider.UpdateToken(authenticated.accessToken, authenticated.refreshToken);
                             credentials["AccessToken"] = authenticated.accessToken;
                             credentials["RefreshToken"] = authenticated.refreshToken;
                             return credentials;
@@ -85,7 +90,7 @@ namespace Framework.Uno
                         var tokenProvider = sp.GetService<ITokenProvider>();
                         var token = await tokenCache.AccessTokenAsync();
                         var rToken = await tokenCache.RefreshTokenAsync();
-                        tokenProvider.UpdateCurrentToken(token, rToken);
+                        tokenProvider.UpdateToken(token, rToken);
                         return default;
                     }), name: "CustomAuth")
                     )

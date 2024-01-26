@@ -23,7 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Framework.ApiClient\Framework.ApiClient.csproj" />
     <ProjectReference Include="..\Framework.Mvvm\Framework.Mvvm.csproj" />
+    <ProjectReference Include="..\Framework.Services\Framework.Services.csproj" />
   </ItemGroup>
 
 </Project>

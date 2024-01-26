@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Framework.Uno.Pages
+namespace Framework.UnoNative.Pages
 {
     public partial class RegionBasePage : UserControl
     {
