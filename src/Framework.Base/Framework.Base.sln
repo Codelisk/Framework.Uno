@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Mvvm", "Framework.Mvvm\Framework.Mvvm.csproj", "{196C7F29-EDF9-4704-9FDC-67919B4541A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Uno", "Framework.Uno\Framework.Uno.csproj", "{CDDDCABC-E349-454E-8D06-4DB46FC3F6A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{196C7F29-EDF9-4704-9FDC-67919B4541A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{196C7F29-EDF9-4704-9FDC-67919B4541A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{196C7F29-EDF9-4704-9FDC-67919B4541A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDDDCABC-E349-454E-8D06-4DB46FC3F6A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDDDCABC-E349-454E-8D06-4DB46FC3F6A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDDDCABC-E349-454E-8D06-4DB46FC3F6A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDDDCABC-E349-454E-8D06-4DB46FC3F6A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
