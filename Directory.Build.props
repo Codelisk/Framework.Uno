@@ -2,6 +2,7 @@
   <Import Project="Directory.Packages.props" Condition="exists('Directory.Packages.props')" />
 
   <PropertyGroup>
+    <DotNetVersion>net8.0</DotNetVersion>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
 
     <TargetFramework>net8.0</TargetFramework>
@@ -11,6 +12,8 @@
 
     <DebugType>portable</DebugType>
     <DebugSymbols>True</DebugSymbols>
+	
+    <IsWinAppSdk>false</IsWinAppSdk>
   </PropertyGroup>
 
 </Project>
