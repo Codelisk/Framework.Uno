@@ -106,11 +106,12 @@ namespace Framework.UnoNative
 
         protected override UIElement CreateShell()
         {
-            return Container.Resolve<Page>();
+            return Container.Resolve<Shell>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<Shell, ShellViewModel>();
         }
     }
 }

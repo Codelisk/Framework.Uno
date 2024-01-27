@@ -56,7 +56,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codelisk.Api.RefitApis.Gene
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Generator", "..\..\submodules\CodeGen\src\Generators\Api\Api.Generator\Api.Generator.csproj", "{09D99F2D-0601-41B0-AB3B-79DF516C0E73}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Framework.UnoNativeShared", "..\..\src\Framework.Base\Framework.UnoNativeShared\Framework.UnoNativeShared\Framework.UnoNativeShared.shproj", "{F9B4F902-5ECD-4540-92C3-6AA432CA6E61}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Framework.UnoNative.Shared", "..\..\src\Framework.Base\Framework.UnoNative.Shared\Framework.UnoNative.Shared.shproj", "{05414BC5-EE81-480F-A9F6-40617F802EB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -385,7 +385,7 @@ Global
 		SolutionGuid = {6B919EA5-75E3-4FB4-848D-0F0E2B021FAF}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		..\..\src\Framework.Base\Framework.UnoNativeShared\Framework.UnoNativeShared\Framework.UnoNativeShared.projitems*{bde90a74-f528-48d2-a17e-a4103b8c883e}*SharedItemsImports = 5
-		..\..\src\Framework.Base\Framework.UnoNativeShared\Framework.UnoNativeShared\Framework.UnoNativeShared.projitems*{f9b4f902-5ecd-4540-92c3-6aa432ca6e61}*SharedItemsImports = 13
+		..\..\src\Framework.Base\Framework.UnoNative.Shared\Framework.UnoNative.Shared.projitems*{05414bc5-ee81-480f-a9f6-40617f802eb4}*SharedItemsImports = 13
+		..\..\src\Framework.Base\Framework.UnoNative.Shared\Framework.UnoNative.Shared.projitems*{bde90a74-f528-48d2-a17e-a4103b8c883e}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
