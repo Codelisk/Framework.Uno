@@ -18,8 +18,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Mvvm", "Framework.Mvvm\Framework.Mvvm.csproj", "{196C7F29-EDF9-4704-9FDC-67919B4541A4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.UnoNative", "Framework.Uno\Framework.UnoNative.csproj", "{CDDDCABC-E349-454E-8D06-4DB46FC3F6A9}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.ApiClient", "Framework.ApiClient\Framework.ApiClient.csproj", "{2378CA1D-1BCB-4113-AD3B-099092449997}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Generator", "..\..\submodules\CodeGen\src\Generators\Api\Api.Generator\Api.Generator.csproj", "{7609AB80-7C26-4883-B83D-E2F39C13BA58}"
@@ -42,6 +40,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codelisk.AutoFilterer.Gener
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codelisk.AutoFilterer", "..\..\submodules\CodeGen\src\Submodules\AutoFilterer\src\AutoFilterer\Codelisk.AutoFilterer.csproj", "{AE13920C-6A63-4645-A842-4C96B1FD18B4}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Framework.UnoNative.Shared", "Framework.UnoNative.Shared\Framework.UnoNative.Shared.shproj", "{05414BC5-EE81-480F-A9F6-40617F802EB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,10 +56,6 @@ Global
 		{196C7F29-EDF9-4704-9FDC-67919B4541A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{196C7F29-EDF9-4704-9FDC-67919B4541A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{196C7F29-EDF9-4704-9FDC-67919B4541A4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CDDDCABC-E349-454E-8D06-4DB46FC3F6A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CDDDCABC-E349-454E-8D06-4DB46FC3F6A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CDDDCABC-E349-454E-8D06-4DB46FC3F6A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CDDDCABC-E349-454E-8D06-4DB46FC3F6A9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2378CA1D-1BCB-4113-AD3B-099092449997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2378CA1D-1BCB-4113-AD3B-099092449997}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2378CA1D-1BCB-4113-AD3B-099092449997}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -117,5 +113,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B919BE28-5790-4FB6-8E0E-B23415950BDD}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Framework.UnoNative.Shared\Framework.UnoNative.Shared.projitems*{05414bc5-ee81-480f-a9f6-40617f802eb4}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

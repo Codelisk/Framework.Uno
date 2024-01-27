@@ -36,8 +36,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Mvvm", "..\..\src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Services", "..\..\src\Framework.Base\Framework.Services\Framework.Services.csproj", "{AC94E44A-2C16-4A97-B968-E1B045BCF40D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.UnoNative", "..\..\src\Framework.Base\Framework.Uno\Framework.UnoNative.csproj", "{2D65C2DC-8523-411D-A55E-4375588A7536}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Submodules", "Submodules", "{D02BE8E8-85A5-4232-95D0-9CAF774BCD60}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generators", "Generators", "{648C2E4F-9B82-4106-B035-FAA222CCD885}"
@@ -57,6 +55,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codelisk.Api.RefitApis.Generator", "..\..\submodules\CodeGen\src\Generators\Api\Codelisk.Api.RefitApis.Generator\Codelisk.Api.RefitApis.Generator.csproj", "{881643B0-4F0D-44B2-ACB2-6E0DBB4C271B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Generator", "..\..\submodules\CodeGen\src\Generators\Api\Api.Generator\Api.Generator.csproj", "{09D99F2D-0601-41B0-AB3B-79DF516C0E73}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Framework.UnoNativeShared", "..\..\src\Framework.Base\Framework.UnoNativeShared\Framework.UnoNativeShared\Framework.UnoNativeShared.shproj", "{F9B4F902-5ECD-4540-92C3-6AA432CA6E61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -230,22 +230,6 @@ Global
 		{AC94E44A-2C16-4A97-B968-E1B045BCF40D}.Release|x64.Build.0 = Release|Any CPU
 		{AC94E44A-2C16-4A97-B968-E1B045BCF40D}.Release|x86.ActiveCfg = Release|Any CPU
 		{AC94E44A-2C16-4A97-B968-E1B045BCF40D}.Release|x86.Build.0 = Release|Any CPU
-		{2D65C2DC-8523-411D-A55E-4375588A7536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D65C2DC-8523-411D-A55E-4375588A7536}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D65C2DC-8523-411D-A55E-4375588A7536}.Debug|arm64.ActiveCfg = Debug|Any CPU
-		{2D65C2DC-8523-411D-A55E-4375588A7536}.Debug|arm64.Build.0 = Debug|Any CPU
-		{2D65C2DC-8523-411D-A55E-4375588A7536}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{2D65C2DC-8523-411D-A55E-4375588A7536}.Debug|x64.Build.0 = Debug|Any CPU
-		{2D65C2DC-8523-411D-A55E-4375588A7536}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{2D65C2DC-8523-411D-A55E-4375588A7536}.Debug|x86.Build.0 = Debug|Any CPU
-		{2D65C2DC-8523-411D-A55E-4375588A7536}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D65C2DC-8523-411D-A55E-4375588A7536}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2D65C2DC-8523-411D-A55E-4375588A7536}.Release|arm64.ActiveCfg = Release|Any CPU
-		{2D65C2DC-8523-411D-A55E-4375588A7536}.Release|arm64.Build.0 = Release|Any CPU
-		{2D65C2DC-8523-411D-A55E-4375588A7536}.Release|x64.ActiveCfg = Release|Any CPU
-		{2D65C2DC-8523-411D-A55E-4375588A7536}.Release|x64.Build.0 = Release|Any CPU
-		{2D65C2DC-8523-411D-A55E-4375588A7536}.Release|x86.ActiveCfg = Release|Any CPU
-		{2D65C2DC-8523-411D-A55E-4375588A7536}.Release|x86.Build.0 = Release|Any CPU
 		{ED0D4F7A-17F7-49D0-A456-012546619941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ED0D4F7A-17F7-49D0-A456-012546619941}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED0D4F7A-17F7-49D0-A456-012546619941}.Debug|arm64.ActiveCfg = Debug|Any CPU
@@ -399,5 +383,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B919EA5-75E3-4FB4-848D-0F0E2B021FAF}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\..\src\Framework.Base\Framework.UnoNativeShared\Framework.UnoNativeShared\Framework.UnoNativeShared.projitems*{bde90a74-f528-48d2-a17e-a4103b8c883e}*SharedItemsImports = 5
+		..\..\src\Framework.Base\Framework.UnoNativeShared\Framework.UnoNativeShared\Framework.UnoNativeShared.projitems*{f9b4f902-5ecd-4540-92c3-6aa432ca6e61}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

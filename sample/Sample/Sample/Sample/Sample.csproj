@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="Uno.Modules.props" Condition="exists('Uno.Modules.props')" />
   <Import Project="..\Uno.Modules.props" Condition="exists('..\Uno.Modules.props')" />
   <Import Project="..\..\Uno.Modules.props" Condition="exists('..\..\Uno.Modules.props')" />
@@ -7,6 +7,7 @@
   <Import Project="..\..\..\..\..\Uno.Modules.props" Condition="exists('..\..\..\..\..\Uno.Modules.props')" />
   <Import Project="..\..\..\..\..\..\Uno.Modules.props" Condition="exists('..\..\..\..\..\..\Uno.Modules.props')" />
   <Import Project="..\..\..\..\..\..\..\Uno.Modules.props" Condition="exists('..\..\..\..\..\..\..\Uno.Modules.props')" />
+  <Import Project="..\..\..\..\src\Framework.Base\Framework.UnoNativeShared\Framework.UnoNativeShared\Framework.UnoNativeShared.projitems" Label="Shared" />
   <Import Project="..\..\..\..\..\..\..\..\Uno.Modules.props" Condition="exists('..\..\..\..\..\..\..\..\Uno.Modules.props')" />
 
   <PropertyGroup>
@@ -47,9 +48,5 @@
     <UnoImage Include="Assets\**\*.svg" />
     <EmbeddedResource Include="appsettings.json" />
     <EmbeddedResource Include="appsettings.*.json" DependentUpon="appsettings.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\src\Framework.Base\Framework.Uno\Framework.UnoNative.csproj" />
   </ItemGroup>
 </Project>
