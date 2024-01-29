@@ -15,17 +15,11 @@ public partial class CompanyEntryOverviewView : RegionBasePage<CompanyEntryOverv
             .HeaderContent("Orderlyze")
             .SubHeaderContent(() => vm.Entrys)
             .SubHeaderContentTemplate<List<string>>(x => ChipGroup(()=>x))
-            .SupportingContent("Lesen")
-            .SupportingContentTemplate<string>(x => new Button()
-                .Content(() => x)
-                .Command(y => y.Bind(() => this.DataContext).Convert(c =>
-                {
-                    if(c is CompanyEntryOverviewViewModel vmInner)
-                    {
-                        return vmInner.DetailCommand;
-                    }
-                    return null;
-                })))
+            .SupportingContent("Test 2")
+            .SupportingContentTemplate<string>(x =>
+            new Button()
+            .Content(() => x)
+            .Command(y => y.Bind(() => vm.DetailCommand)))
             .MediaContent("https://images4.alphacoders.com/110/1107821.jpg")
             .MediaContentTemplate(() => new Image().Source("https://images4.alphacoders.com/110/1107821.jpg")
                     .VerticalAlignment(VerticalAlignment.Center)
