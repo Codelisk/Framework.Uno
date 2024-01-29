@@ -12,11 +12,15 @@
 
   <PropertyGroup>
 
+    <TargetFrameworks>$(DotNetVersion);</TargetFrameworks>
+    <TargetFrameworks Condition="'$(OverrideTargetFramework)'!=''">$(OverrideTargetFramework)</TargetFrameworks>
+
     <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
     <GenerateLibraryLayout>true</GenerateLibraryLayout>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ReactiveUI.Uno.WinUI" />
     <PackageReference Include="Uno.WinUI" />
     <PackageReference Include="Uno.WinUI.DevServer" Condition="'$(Configuration)'=='Debug'" />
     <PackageReference Include="Prism.Uno.WinUI" />

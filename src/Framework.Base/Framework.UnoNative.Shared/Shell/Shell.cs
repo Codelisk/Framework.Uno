@@ -3,17 +3,17 @@ public sealed partial class Shell : Page
     public Shell()
     {
         this
-            .Background(Theme.Brushes.Background.Default)
+            .Background("#ffffff")
             .Content(new StackPanel()
             .VerticalAlignment(VerticalAlignment.Center)
-            .HorizontalAlignment(HorizontalAlignment.Center)
+            .HorizontalAlignment(HorizontalAlignment.Stretch)
             .Children(
-                new Grid().RowDefinitions("auto,*")
+                new Grid().HorizontalAlignment(HorizontalAlignment.Stretch).RowDefinitions("auto,*").ColumnDefinitions("*")
                 .Children(
-                    new ContentControl()
+                    new ContentControl().HorizontalContentAlignment(HorizontalAlignment.Stretch).HorizontalAlignment(HorizontalAlignment.Stretch)
                     .Name("Header")
                     .RegionManager(regionName:"HeaderRegion"),
-                    new ContentControl()
+                    new ContentControl().HorizontalContentAlignment(HorizontalAlignment.Stretch).HorizontalAlignment(HorizontalAlignment.Stretch)
                     .Name("Body")
                     .RegionManager(regionName: "BodyRegion")
                     .Grid(row: 1)
