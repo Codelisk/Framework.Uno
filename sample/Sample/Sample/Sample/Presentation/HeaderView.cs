@@ -14,7 +14,7 @@ public partial class HeaderView : RegionBasePage
             new Grid()
             .ColumnDefinitions("*,auto,auto")
             .Children(
-                new TextBlock().Text("Header 66"),
+                new TextBlock().Text("Header 1"),
             new Button().Content("Login").Grid(1),
             new Button().Content("Sign up").Grid(2)
             )));

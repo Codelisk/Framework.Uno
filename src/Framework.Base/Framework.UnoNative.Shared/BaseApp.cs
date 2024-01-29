@@ -16,16 +16,6 @@ namespace Framework.UnoNative
 {
     public partial class BaseApp : PrismApplication
     {
-        protected Window? MainWindow { get; private set; }
-
-        protected override void ConfigureApp(IApplicationBuilder builder)
-        {
-            base.ConfigureApp(builder);
-#if DEBUG
-            //builder.Window.EnableHotReload();
-            //ClientHotReloadProcessor.CurrentWindow = builder.Window;
-#endif
-        }
 
         protected override void ConfigureHost(IHostBuilder builder)
         {
@@ -112,6 +102,13 @@ namespace Framework.UnoNative
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<Shell, ShellViewModel>();
+        }
+
+        protected override void ConfigureWindow(Window window)
+        {
+#if DEBUG
+            window.EnableHotReload();
+#endif
         }
     }
 }
