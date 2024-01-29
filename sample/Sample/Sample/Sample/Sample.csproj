@@ -60,6 +60,36 @@
 
 
   <ItemGroup>
+    <None Remove="Assets\Icons\add.png" />
+    <None Remove="Assets\Images\test.scale-100.jpg" />
+    <None Remove="assets\prism.svg" />
+    <None Remove="Assets\salzburg.png" />
+    <None Remove="Assets\salzburg.svg" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <UnoImage Remove="Assets\prism.svg" />
+    <UnoImage Remove="Assets\salzburg.svg" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <UnoImage Include="Assets\Icons\add.png" />
+    <Content Include="Assets\Images\test.scale-100.jpg" />
+    <Content Include="Assets\prism.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\salzburg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\salzburg.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\..\src\Framework.Base\Framework.ApiClient\Framework.ApiClient.csproj" />
     <ProjectReference Include="..\..\..\..\src\Framework.Base\Framework.Mvvm\Framework.Mvvm.csproj" />
   </ItemGroup>
