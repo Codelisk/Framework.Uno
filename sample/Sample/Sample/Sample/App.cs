@@ -2,6 +2,8 @@
 
 using Framework.UnoNative;
 using Sample.Presentation;
+using Sample.Presentation.CompanyEntryDetail;
+using Sample.Presentation.CompanyEntryOverview;
 using Uno.Extensions.Markup.Generator;
 [assembly: GenerateMarkupForAssembly(typeof(PrismApplicationBase))]
 
@@ -14,5 +16,7 @@ public class App : BaseApp
         base.RegisterTypes(containerRegistry);
         containerRegistry.RegisterForNavigation<HeaderView, HeaderViewModel>();
         containerRegistry.RegisterForNavigation<BodyView, BodyViewModel>();
+        containerRegistry.RegisterForNavigation<CompanyEntryOverviewView, CompanyEntryOverviewViewModel>();
+        containerRegistry.RegisterForNavigation<CompanyEntryDetailView, CompanyEntryDetailViewModel>();
     }
 }

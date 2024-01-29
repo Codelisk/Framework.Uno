@@ -6,16 +6,26 @@ using System.Threading.Tasks;
 using Framework.UnoNative.Pages;
 
 namespace Sample.Presentation;
-public partial class BodyView : RegionBasePage
+public partial class BodyView : RegionBasePage<BodyViewModel>
 {
     public BodyView()
     {
-        this.SetupPage<HeaderViewModel>((page, vm) => page.Content(new StackPanel().Children(
-            new Grid().Children(
-                new Card().Style(StaticResource.Get<Style>("ElevatedCardStyle")).MaxWidth(200).MaxHeight(200)
-                .HeaderContent("Test")
-                .SubHeaderContent("Test 2")
-                .MediaContent("ms-appx:///Assets/salzburg.png")
-                .MediaContentTemplate(() => new Image().Width(500).HorizontalAlignment(HorizontalAlignment.Stretch).Stretch(Stretch.UniformToFill).Source(x=>x.Bind()))))));
+    }
+
+    protected override UIElement MainContent(BodyViewModel vm)
+    {
+        return new Grid().Children(
+                new CardContentControl().Style(StaticResource.Get<Style>("ElevatedCardContentControlStyle")).Width(200).Height(200)
+                .Content(
+                    new Grid().Children(
+                    new Image().Source("https://images4.alphacoders.com/110/1107821.jpg")
+                    .VerticalAlignment(VerticalAlignment.Center)
+                    .HorizontalAlignment(HorizontalAlignment.Center)
+                    .Stretch(Stretch.UniformToFill),
+                    new Button()
+                    .Content(x=>x.Bind(()=>vm.Test))
+                    .Command(x=>x.Bind(()=>vm.NavigateCommand))
+                    .Style(StaticResource.Get<Style>("ElevatedButtonStyle")).VerticalAlignment(VerticalAlignment.Bottom).Margin(10)
+                )));
     }
 }

@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 
 namespace Framework.UnoNative.Pages
 {
-    public partial class RegionBasePage : UserControl
+    public abstract partial class RegionBasePage<T> : UserControl where T: RegionBaseViewModel
     {
         public RegionBasePage()
         {
+            this.SetupPage((page, vm) => page.Content(MainContent(vm)));
         }
-        public UserControl SetupPage<T>(Action<UserControl, T> configureElement)
+        protected abstract UIElement MainContent(T vm);
+        public UserControl SetupPage(Action<UserControl, T> configureElement)
         {
-            return this.DataContext<RegionBaseViewModel>((page, vm) => page.HorizontalAlignment(HorizontalAlignment.Stretch).Background("#3702f5").Content(
+            return this.DataContext<T>((page, vm) => page.HorizontalAlignment(HorizontalAlignment.Stretch).Background("#3702f5").Content(
                 new Grid().HorizontalAlignment(HorizontalAlignment.Stretch).Children(
                     new ProgressRing().Width(100).Height(100).Visibility(x => x.Bind(() => vm.IsBusy).Convert((x) => x ? Visibility.Visible : Visibility.Collapsed)),
                     new UserControl().DataContext(configureElement).HorizontalAlignment(HorizontalAlignment.Stretch)
