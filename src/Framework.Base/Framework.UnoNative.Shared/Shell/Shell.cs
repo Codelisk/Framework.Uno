@@ -8,7 +8,7 @@ public sealed partial class Shell : Page
             .VerticalAlignment(VerticalAlignment.Center)
             .HorizontalAlignment(HorizontalAlignment.Center)
             .Children(
-                new Grid().RowDefinitions("*,*")
+                new Grid().RowDefinitions("auto,*")
                 .Children(
                     new ContentControl()
                     .Name("Header")

@@ -1,6 +1,7 @@
+using ReactiveUI;
 using System.Diagnostics;
 
-public class ShellViewModel : BindableBase, IActiveAware
+public class ShellViewModel : ReactiveObject, IActiveAware
 {
     private readonly IRegionManager _regionManager;
     private bool _isInitialized;

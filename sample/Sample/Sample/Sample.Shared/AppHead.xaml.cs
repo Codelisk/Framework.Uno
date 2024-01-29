@@ -1,4 +1,5 @@
 using Microsoft.UI.Xaml;
+using Uno.Extensions.Hosting;
 using Uno.Resizetizer;
 
 namespace Sample;
@@ -11,5 +12,10 @@ public sealed partial class AppHead : App
     public AppHead()
     {
         this.InitializeComponent();
+    }
+    protected override void ConfigureApp(IApplicationBuilder builder)
+    {
+        base.ConfigureApp(builder);
+        Resources.Build(r => r.Merged(new AppResources()));
     }
 }

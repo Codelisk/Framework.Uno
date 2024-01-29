@@ -15,7 +15,7 @@
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="$(MicrosoftExtensionsVersion)" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(MicrosoftExtensionsVersion)" />
     <PackageVersion Include="Moq" Version="4.20.69" />
-    <PackageVersion Include="Uno.WinUI.Markup" Version="5.1.0-dev.94" />
+    <PackageVersion Include="Uno.WinUI.Markup" Version="5.2.0-dev.11" />
     <PackageVersion Include="Uno.Toolkit.WinUI.Markup" Version="5.1.0-dev.115" />
     <PackageVersion Include="Uno.Material.WinUI.Markup" Version="4.1.0-dev.52" />
     <PackageVersion Include="Uno.Themes.WinUI.Markup" Version="4.1.0-dev.52" />
@@ -59,13 +59,13 @@
     <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="$(MicrosoftExtensionsVersion)" />
   </ItemGroup>
   <ItemGroup>
-    <PackageVersion Include="Microsoft.Windows.Compatibility" Version="$(MicrosoftExtensionsVersion)" />
+    <PackageVersion Include="Microsoft.Windows.Compatibility" Version="8.0.1" />
     <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26031-preview" />
-    <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.5.231202003-experimental1" />
+    <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.5.240124002-experimental2" />
     <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageVersion Include="Prism.Container.Abstractions" Version="9.0.70-pre" />
     <PackageVersion Include="Prism.Container.DryIoc" Version="9.0.70-pre" />
-    <PackageVersion Include="Prism.Core" Version="9.0.286-pre" />
+    <PackageVersion Include="Prism.Core" Version="9.0.383-pre" />
     <PackageVersion Include="Prism.DryIoc.Uno" Version="8.1.97" />
     <PackageVersion Include="Prism.DryIoc.Uno.WinUI" Version="9.0.271-pre" />
     <PackageVersion Include="Prism.Uno.WinUI" Version="9.0.286-pre" />
@@ -82,8 +82,8 @@
     <PackageVersion Include="Uno.Extensions.Http.Refit" Version="$(UnoExtensions)" />
     <PackageVersion Include="Uno.Extensions.Localization" Version="$(UnoExtensions)" />
     <PackageVersion Include="Uno.Extensions.Localization.WinUI" Version="$(UnoExtensions)" />
-    <PackageVersion Include="Uno.Extensions.Logging.OSLog" Version="1.7.0" />
-    <PackageVersion Include="Uno.Extensions.Logging.WebAssembly.Console" Version="1.7.0" />
+    <PackageVersion Include="Uno.Extensions.Logging.OSLog" Version="1.8.0-dev.1" />
+    <PackageVersion Include="Uno.Extensions.Logging.WebAssembly.Console" Version="1.8.0-dev.1" />
     <PackageVersion Include="Uno.Extensions.Logging.WinUI" Version="$(UnoExtensions)" />
     <PackageVersion Include="Uno.Extensions.Navigation" Version="$(UnoExtensions)" />
     <PackageVersion Include="Uno.Extensions.Navigation.WinUI" Version="$(UnoExtensions)" />
@@ -94,33 +94,33 @@
     <PackageVersion Include="Uno.Material.WinUI" Version="4.1.0-dev.52" />
     <PackageVersion Include="Uno.Dsp.Tasks" Version="1.3.0-dev.2" />
     <PackageVersion Include="Uno.Toolkit.WinUI" Version="$(UnoToolkitWinUI)" />
-    <PackageVersion Include="Uno.Toolkit.WinUI.Material" Version="$(UnoToolkitWinUI)" />
-    <PackageVersion Include="Uno.Resizetizer" Version="1.3.0-dev.12" />
+    <PackageVersion Include="Uno.Toolkit.WinUI.Material" Version="5.1.0-dev.115" />
+    <PackageVersion Include="Uno.Resizetizer" Version="1.3.0-dev.25" />
     <PackageVersion Include="Uno.UI" Version="5.0.48" />
     <PackageVersion Include="Uno.UI.RemoteControl" Version="$(UnoWinUI)" />
-    <PackageVersion Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="$(UnoWinUI)" />
+    <PackageVersion Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="5.2.0-dev.377" />
     <PackageVersion Include="Uno.UniversalImageLoader" Version="1.9.36" />
-    <PackageVersion Include="Uno.Wasm.Bootstrap" Version="8.0.0" />
-    <PackageVersion Include="Uno.Wasm.Bootstrap.DevServer" Version="8.0.0" />
+    <PackageVersion Include="Uno.Wasm.Bootstrap" Version="9.0.0-dev.27" />
+    <PackageVersion Include="Uno.Wasm.Bootstrap.DevServer" Version="9.0.0-dev.27" />
     <PackageVersion Include="Uno.Wasm.Bootstrap.Server" Version="8.0.0" />
-    <PackageVersion Include="Uno.WinUI" Version="$(UnoWinUI)" />
+    <PackageVersion Include="Uno.WinUI" Version="5.2.0-dev.377" />
     <PackageVersion Include="Uno.WinUI.Lottie" Version="$(UnoWinUI)" />
-    <PackageVersion Include="Uno.WinUI.DevServer" Version="$(UnoWinUI)" />
-    <PackageVersion Include="Uno.WinUI.WebAssembly" Version="$(UnoWinUI)" />
+    <PackageVersion Include="Uno.WinUI.DevServer" Version="5.2.0-dev.377" />
+    <PackageVersion Include="Uno.WinUI.WebAssembly" Version="5.2.0-dev.377" />
     <PackageVersion Include="Uno.WinUI.Svg" Version="$(UnoWinUI)" />
-    <PackageVersion Include="SkiaSharp.Skottie" Version="2.88.6" />
+    <PackageVersion Include="SkiaSharp.Skottie" Version="2.88.7" />
     <PackageVersion Include="SkiaSharp.Views.Uno" Version="2.88.6" />
-    <PackageVersion Include="SkiaSharp.Views.Uno.WinUI" Version="2.88.6" />
+    <PackageVersion Include="SkiaSharp.Views.Uno.WinUI" Version="2.88.7" />
     <PackageVersion Include="Svg.Skia" Version="1.0.0.4" />
-    <PackageVersion Include="Uno.WinUI.Skia.Wpf" Version="$(UnoWinUI)" />
+    <PackageVersion Include="Uno.WinUI.Skia.Wpf" Version="5.2.0-dev.377" />
   </ItemGroup>
   <ItemGroup>
     <PackageVersion Include="Refit" Version="7.0.0" />
-    <PackageVersion Include="Polly" Version="8.2.0" />
+    <PackageVersion Include="Polly" Version="8.2.1" />
     <PackageVersion Include="Refit.Newtonsoft.Json" Version="7.0.0" />
-    <PackageVersion Include="ReactiveUI" Version="19.5.1" />
+    <PackageVersion Include="ReactiveUI" Version="19.5.41" />
     <PackageVersion Include="AsyncAwaitBestPractices" Version="7.0.0" />
-    <PackageVersion Include="Xamarin.Google.Android.Material" Version="1.10.0.1" />
+    <PackageVersion Include="Xamarin.Google.Android.Material" Version="1.10.0.2" />
   </ItemGroup>
   <ItemGroup>
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />

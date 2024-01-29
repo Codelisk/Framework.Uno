@@ -14,6 +14,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\RegionBasePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AuthenticationService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Shell\Shell.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)shell\ShellViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shell\ShellViewModel.cs" />
   </ItemGroup>
 </Project>
