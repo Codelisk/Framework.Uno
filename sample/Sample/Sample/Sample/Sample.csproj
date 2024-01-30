@@ -92,5 +92,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\src\Framework.Base\Framework.ApiClient\Framework.ApiClient.csproj" />
     <ProjectReference Include="..\..\..\..\src\Framework.Base\Framework.Mvvm\Framework.Mvvm.csproj" />
+    <ProjectReference Include="..\Shared\Sample.Foundation\Sample.Foundation.csproj" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 
 [Entity(typeof(CompanyDto))]
-    public class CompanyEntity : CompanyDto
-    {
-    }
+public partial class CompanyEntity : CompanyDto
+{
+}
 
