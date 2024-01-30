@@ -19,6 +19,6 @@ public partial class CompanyEntryOverviewView : UserControl
             .SupportingContentTemplate<string>(x =>
             new Button()
             .Content(() => x)
-            .Command(y => y.Bind(() => vm.DetailCommand)))));
+            .Command(() => vm.DetailCommand))));
     }
 }
