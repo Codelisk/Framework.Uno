@@ -23,6 +23,6 @@ public partial class BodyViewModel : RegionBaseViewModel
     public ICommand NavigateCommand => this.LoadingCommand(OnNavigateAsync);
     private async Task OnNavigateAsync()
     {
-        ChangeCurrentRegion("CompanyEntryOverviewView");
+        ChangeCurrentRegion("CompanyEntryDetailView");
     }
 }
