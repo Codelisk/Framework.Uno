@@ -30,7 +30,7 @@ namespace Framework.ApiClient.Services.Helper
 
         public string GetRestUrl()
         {
-            return null;//Constants.RestUrl;
+            return "https://localhost:7205/";//Constants.RestUrl;
         }
     }
 }

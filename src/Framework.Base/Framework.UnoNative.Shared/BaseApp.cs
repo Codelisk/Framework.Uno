@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Framework.ApiClient;
 using Uno.Extensions.Markup.Generator;
+using Microsoft.Extensions.Configuration;
 [assembly: GenerateMarkupForAssembly(typeof(PrismApplicationBase))]
 
 namespace Framework.UnoNative
@@ -94,13 +95,15 @@ namespace Framework.UnoNative
                     .ConfigureServices((context, services) =>
                     {
                         var configuration = context.Configuration;
-                        services.AddSingleton<IDispatcher, Dispatcher>();
-                        services.AddApi<AuthenticationService>();
+                        RegisterServices(configuration, services);
                         // TODO: Register your services
                         //services.AddSingleton<IMyService, MyService>();
                     });
         }
-
+        protected virtual void RegisterServices(IConfiguration configuration, IServiceCollection services)
+        {
+            services.AddSingleton<IDispatcher, Dispatcher>();
+        }
         protected override UIElement CreateShell()
         {
             return Container.Resolve<Shell>();
