@@ -1,0 +1,3 @@
+[submodule "submodules/Framework.Restservice"]
+	path = submodules/Framework.Restservice
+	url = https://github.com/Codelisk/Framework.Restservice.git
