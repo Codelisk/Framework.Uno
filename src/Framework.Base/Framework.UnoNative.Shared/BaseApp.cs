@@ -11,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework.ApiClient;
+using Uno.Extensions.Markup.Generator;
+[assembly: GenerateMarkupForAssembly(typeof(PrismApplicationBase))]
 
 namespace Framework.UnoNative
 {
