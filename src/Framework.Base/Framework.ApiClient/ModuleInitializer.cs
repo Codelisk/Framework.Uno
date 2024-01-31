@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Framework.ApiClient
 {
-    internal class ModuleInitializerBase
+    public class ModuleInitializerBase
     {
         public virtual void AddApis(IServiceCollection services) { }
     }
@@ -21,7 +21,7 @@ namespace Framework.ApiClient
             new ModuleInitializer().AddApi<TAuthService>(services);
         }
     }
-    internal partial class ModuleInitializer : ModuleInitializerBase
+    public partial class ModuleInitializer : ModuleInitializerBase
     {
         public virtual void AddApi<TAuthService>(IServiceCollection services) where TAuthService : class, IAuthenticationService
         {

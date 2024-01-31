@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Common\Codelisk.GeneratorAttributes\Codelisk.GeneratorAttributes.csproj" />
+    <ProjectReference Include="..\..\..\..\..\..\..\Uno\Framework.Uno\submodules\Framework.Restservice\submodules\CodeGen\src\Common\Codelisk.GeneratorAttributes\Codelisk.GeneratorAttributes.csproj" />
   </ItemGroup>
 
 </Project>

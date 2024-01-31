@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Framework.ApiClient.Services.Helper
 {
-    internal class ApiBuilder : IApiBuilder
+    public class ApiBuilder : IApiBuilder
     {
         //private readonly JsonSerializerSettings _jsonSettings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.None };
 
