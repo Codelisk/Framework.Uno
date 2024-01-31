@@ -1,4 +1,3 @@
-
-    public class UserDto : IdentityUser<Guid>
-    {
-    }
+public class UserDto : IdentityUser<Guid>
+{
+}
