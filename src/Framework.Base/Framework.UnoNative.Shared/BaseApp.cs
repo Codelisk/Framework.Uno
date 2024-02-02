@@ -13,7 +13,6 @@ using System.Threading.Tasks;
 using Framework.ApiClient;
 using Uno.Extensions.Markup.Generator;
 using Microsoft.Extensions.Configuration;
-[assembly: GenerateMarkupForAssembly(typeof(PrismApplicationBase))]
 
 namespace Framework.UnoNative
 {

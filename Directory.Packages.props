@@ -16,6 +16,7 @@
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="$(MicrosoftExtensionsVersion)" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(MicrosoftExtensionsVersion)" />
     <PackageVersion Include="Moq" Version="4.20.69" />
+    <PackageVersion Include="Prism.Uno.WinUI.Markup" Version="9.0.383-pre" />
     <PackageVersion Include="ReactiveUI.Uno.WinUI" Version="19.1.34" />
     <PackageVersion Include="Uno.WinUI.Markup" Version="5.2.0-dev.11" />
     <PackageVersion Include="Uno.Toolkit.WinUI.Markup" Version="5.1.0-dev.115" />
