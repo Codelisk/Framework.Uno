@@ -3,7 +3,6 @@ public sealed partial class Shell : Page
     public Shell()
     {
         this
-            .Background("#ffffff")
             .Content(new StackPanel()
             .VerticalAlignment(VerticalAlignment.Stretch)
             .HorizontalAlignment(HorizontalAlignment.Stretch)

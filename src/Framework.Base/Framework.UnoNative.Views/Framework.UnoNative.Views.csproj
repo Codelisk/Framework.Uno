@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="Modules.props" Condition="exists('Modules.props')" />
+  <Import Project="..\Modules.props" Condition="exists('..\Modules.props')" />
+  <Import Project="..\..\Modules.props" Condition="exists('..\..\Modules.props')" />
+  <Import Project="..\..\..\Modules.props" Condition="exists('..\..\..\Modules.props')" />
+  <Import Project="..\..\..\..\Modules.props" Condition="exists('..\..\..\..\Modules.props')" />
+  <Import Project="..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\Modules.props')" />
+  <Import Project="..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\Modules.props')" />
+  <Import Project="..\..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\..\Modules.props')" />
+  <Import Project="..\..\..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\..\..\Modules.props')" />
+
+  <ItemGroup>
+    <PackageReference Include="ReactiveUI.Uno.WinUI" />
+    <PackageReference Include="Uno.WinUI" />
+    <PackageReference Include="Prism.Uno.WinUI" />
+    <PackageReference Include="Prism.DryIoc.Uno.WinUI" />
+    <PackageReference Include="Uno.WinUI.Markup" />
+    <PackageReference Include="Uno.Material.WinUI.Markup" />
+    <PackageReference Include="Uno.Themes.WinUI.Markup" />
+    <PackageReference Include="Uno.Extensions.Markup.Generators">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Uno.Toolkit.WinUI.Markup" />
+    <PackageReference Include="Uno.Toolkit.WinUI.Material" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.Mvvm\Framework.Mvvm.csproj" />
+  </ItemGroup>
+</Project>
