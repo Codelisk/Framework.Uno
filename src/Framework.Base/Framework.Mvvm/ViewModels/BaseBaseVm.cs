@@ -11,7 +11,7 @@ namespace Framework.Mvvm.ViewModels
 {
     public abstract class BaseBaseVm : ReactiveObject
     {
-        public bool IsBusy { get; set; }
+        public bool IsBusy { get; set; } = true;
         public BaseBaseVm()
         {
         }

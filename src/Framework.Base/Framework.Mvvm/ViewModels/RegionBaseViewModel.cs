@@ -59,6 +59,8 @@ namespace Framework.Mvvm.ViewModels
             CurrentRegionNavigationService = navigationContext.NavigationService;
 
             SetUpReactiveAndEvents();
+
+            this.IsBusy = false;
         }
 
         protected virtual INavigationParameters AddBaseValuesToParametersForNavigationToRegion(INavigationParameters parameters)
