@@ -15,4 +15,8 @@
     <PackageReference Include="Microsoft.Extensions.Logging" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Common\Codelisk.GeneratorAttributes\Codelisk.GeneratorAttributes.csproj" PrivateAssets="all" />
+  </ItemGroup>
+
 </Project>
