@@ -11,7 +11,12 @@ namespace Framework.Mvvm.ViewModels
 {
     public abstract class BaseBaseVm : ReactiveObject
     {
-        public bool IsBusy { get; set; } = true;
+        private bool isBusy = true;
+        public bool IsBusy
+        {
+            get { return isBusy; }
+            set { this.RaiseAndSetIfChanged(ref isBusy, value); }
+        }
         public BaseBaseVm()
         {
         }
