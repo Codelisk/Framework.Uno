@@ -53,13 +53,13 @@ namespace Framework.Mvvm.ViewModels
                 return;
             }
 
-            this.Initialized = true;
 
             this.Initialize(navigationContext);
             CurrentRegionNavigationService = navigationContext.NavigationService;
 
             SetUpReactiveAndEvents();
 
+            this.Initialized = true;
             this.IsBusy = false;
         }
 
