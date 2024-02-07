@@ -16,9 +16,14 @@ namespace Framework.UnoNative.Views.Pages
             this.SetupPage((page, vm) => page.Content(MainContent(vm)));
         }
         protected abstract UIElement MainContent(T vm);
+        private UserControl root;
+        public T GetDataContext()
+        {
+            return root.DataContext as T;
+        }
         public UserControl SetupPage(Action<UserControl, T> configureElement)
         {
-            return this.DataContext<T>((page, vm) => page.HorizontalAlignment(HorizontalAlignment.Stretch).Content(
+            return this.DataContext<T>((page, vm) => page.Assign(out root).HorizontalAlignment(HorizontalAlignment.Stretch).Content(
                 new Grid().HorizontalAlignment(HorizontalAlignment.Stretch).Children(
                     new ProgressRing().Width(100).Height(100).Visibility(x => x.Bind(() => vm.IsBusy).Convert((x) => x ? Visibility.Visible : Visibility.Collapsed)),
                     new UserControl().DataContext(configureElement).HorizontalAlignment(HorizontalAlignment.Stretch)
