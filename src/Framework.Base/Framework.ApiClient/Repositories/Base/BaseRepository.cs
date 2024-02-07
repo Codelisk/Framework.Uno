@@ -51,7 +51,8 @@ namespace Framework.ApiClient.Repositories.Base
         [GetAllFull]
         protected virtual async Task<T> TryRequest<T>(Func<Task<T>> func, T defaultValue = default(T))
         {
-            return await func().ConfigureAwait(false);
+            var result = await func().ConfigureAwait(false);
+            return result;
         }
 
         [Codelisk.GeneratorAttributes.WebAttributes.HttpMethod.Delete]

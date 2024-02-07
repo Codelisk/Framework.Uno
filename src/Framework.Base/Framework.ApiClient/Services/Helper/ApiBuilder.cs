@@ -24,7 +24,8 @@ namespace Framework.ApiClient.Services.Helper
         {
             return new RefitSettings
             {
-                AuthorizationHeaderValueGetter = AuthorizationHeaderValueGetter
+                AuthorizationHeaderValueGetter = AuthorizationHeaderValueGetter,
+                ContentSerializer = new NewtonsoftJsonContentSerializer()
             };
         }
 
