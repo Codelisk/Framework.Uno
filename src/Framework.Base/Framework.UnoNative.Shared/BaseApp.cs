@@ -13,13 +13,20 @@ using System.Threading.Tasks;
 using Framework.ApiClient;
 using Uno.Extensions.Markup.Generator;
 using Microsoft.Extensions.Configuration;
+using Framework.Services.Services.Application;
+using Microsoft.UI.Xaml.Automation.Provider;
+using ooeentwickleruno;
+using ooeentwickleruno.Infrastructure;
 
 namespace Framework.UnoNative
 {
     public partial class BaseApp : PrismApplication
     {
+        public static Window _window;
         protected override void ConfigureWindow(Window window)
         {
+            _window = window;
+            //this.Container.Resolve<IMainWindowProvider<Window>>();
 #if DEBUG
             window.EnableHotReload();
 #endif
@@ -94,6 +101,7 @@ namespace Framework.UnoNative
                     .ConfigureServices((context, services) =>
                     {
                         var configuration = context.Configuration;
+                        services.AddSingleton<IMainWindowProvider<Window>, MainWindowProvider>();
                         RegisterServices(configuration, services);
                         // TODO: Register your services
                         //services.AddSingleton<IMyService, MyService>();
