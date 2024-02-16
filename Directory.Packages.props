@@ -8,7 +8,7 @@
     <UnoWinUI>5.2.0-dev.377</UnoWinUI>
     <UnoToolkitWinUI>5.1.0-dev.26</UnoToolkitWinUI>
     <UnoExtensions>4.0.0-dev.228</UnoExtensions>
-    <Prism>9.0.383-pre</Prism>
+    <Prism>9.0.401-pre</Prism>
   </PropertyGroup>
   <ItemGroup Label="Global Package versions">
     <PackageVersion Include="AutoMapper" Version="12.0.1" />
