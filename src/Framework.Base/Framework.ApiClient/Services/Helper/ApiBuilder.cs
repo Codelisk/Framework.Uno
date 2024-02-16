@@ -31,7 +31,7 @@ namespace Framework.ApiClient.Services.Helper
 
         public string GetRestUrl()
         {
-            return "https://localhost:7205/";//Constants.RestUrl;
+            return "https://ooeentwickler.azurewebsites.net/";//Constants.RestUrl;
         }
     }
 }
