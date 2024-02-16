@@ -8,9 +8,9 @@ namespace Framework.ApiClient.Models
 {
     public class AuthResult
     {
-        public required string tokenType { get; set; }
-        public required string accessToken { get; set; }
-        public required int expiresIn { get; set; }
-        public required string refreshToken { get; set; }
+        public string tokenType { get; set; }
+        public string accessToken { get; set; }
+        public int expiresIn { get; set; }
+        public string refreshToken { get; set; }
     }
 }

@@ -4,6 +4,6 @@
 public class ProgrammingFrameworkDto : BaseDtoWithName
 {
     [ForeignKey(nameof(ProgrammingLanguageDto))]
-    public required Guid ProgrammingLanguageId { get; set; }
+    public Guid ProgrammingLanguageId { get; set; }
 }
 

@@ -3,8 +3,8 @@
 public class AccountProgrammingFrameworkDto : BaseUserDto
 {
     [ForeignKey(nameof(AccountDto))]
-    public required Guid AccountId { get; set; }
+    public Guid AccountId { get; set; }
 
     [ForeignKey(nameof(ProgrammingFrameworkDto))]
-    public required Guid ProgrammingFrameworkId { get; set; }
+    public Guid ProgrammingFrameworkId { get; set; }
 }
