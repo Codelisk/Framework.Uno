@@ -28,7 +28,7 @@ namespace Framework.UnoNative
             _window = window;
             //this.Container.Resolve<IMainWindowProvider<Window>>();
 #if DEBUG
-            window.EnableHotReload();
+            //window.EnableHotReload();
 #endif
         }
         protected override void ConfigureHost(IHostBuilder builder)
@@ -39,7 +39,7 @@ namespace Framework.UnoNative
                         // Configure log levels for different categories of logging
                         logBuilder
                             .SetMinimumLevel(
-                                context.HostingEnvironment.IsDevelopment() ?
+                                context.HostingEnvironment.IsDevelopment() && false ?
                                     LogLevel.Information :
                                     LogLevel.Warning)
 
