@@ -39,7 +39,7 @@ namespace Framework.UnoNative
                         // Configure log levels for different categories of logging
                         logBuilder
                             .SetMinimumLevel(
-                                context.HostingEnvironment.IsDevelopment() && false ?
+                                context.HostingEnvironment.IsDevelopment() || true ?
                                     LogLevel.Information :
                                     LogLevel.Warning)
 
