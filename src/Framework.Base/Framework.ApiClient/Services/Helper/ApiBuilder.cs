@@ -1,9 +1,9 @@
-﻿using Refit;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Refit;
 
 namespace Framework.ApiClient.Services.Helper
 {
@@ -11,16 +11,31 @@ namespace Framework.ApiClient.Services.Helper
     {
         //private readonly JsonSerializerSettings _jsonSettings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.None };
 
-        public TApi BuildRestService<TApi>(Func<HttpRequestMessage, CancellationToken, Task<string>>? AuthorizationHeaderValueGetter = null)
+        public TApi BuildRestService<TApi>(
+            Func<
+                HttpRequestMessage,
+                CancellationToken,
+                Task<string>
+            >? AuthorizationHeaderValueGetter = null
+        )
         {
-            return RestService.For<TApi>(GetRestUrl(), BuildApiSettings(AuthorizationHeaderValueGetter));
+            return RestService.For<TApi>(
+                GetRestUrl(),
+                BuildApiSettings(AuthorizationHeaderValueGetter)
+            );
         }
 
         /// <summary>
         /// Build api settings
         /// </summary>
         /// <returns>Refit Settings</returns>
-        private RefitSettings BuildApiSettings(Func<HttpRequestMessage, CancellationToken, Task<string>>? AuthorizationHeaderValueGetter = null)
+        private RefitSettings BuildApiSettings(
+            Func<
+                HttpRequestMessage,
+                CancellationToken,
+                Task<string>
+            >? AuthorizationHeaderValueGetter = null
+        )
         {
             return new RefitSettings
             {
@@ -31,7 +46,7 @@ namespace Framework.ApiClient.Services.Helper
 
         public string GetRestUrl()
         {
-            return "https://ooeentwickler.azurewebsites.net/";//Constants.RestUrl;
+            return "https://ooeentwickler.azurewebsites.net/"; //Constants.RestUrl;
         }
     }
 }
