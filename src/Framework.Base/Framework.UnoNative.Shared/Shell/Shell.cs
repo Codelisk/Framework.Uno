@@ -2,18 +2,36 @@ public sealed partial class Shell : Page
 {
     public Shell()
     {
-        this
-            .Content(
-                new Grid().HorizontalAlignment(HorizontalAlignment.Stretch).RowDefinitions("auto,*").ColumnDefinitions("*")
-                .Children(
-                    new ContentControl().VerticalAlignment(VerticalAlignment.Top).VerticalContentAlignment(VerticalAlignment.Top).HorizontalContentAlignment(HorizontalAlignment.Stretch).HorizontalAlignment(HorizontalAlignment.Stretch)
-                    .Name("Header")
-                    .RegionManager(regionName:"HeaderRegion"),
-                    new ScrollViewer().Content(new ContentControl().HorizontalContentAlignment(HorizontalAlignment.Stretch).HorizontalAlignment(HorizontalAlignment.Stretch)
-                    .Name("Body")
-                    .RegionManager(regionName: "BodyRegion")
+        try
+        {
+            this.Content(
+                new Grid()
+                    .HorizontalAlignment(HorizontalAlignment.Stretch)
+                    .RowDefinitions("auto,*")
+                    .ColumnDefinitions("*")
+                    .Children(
+                        new ContentControl()
+                            .VerticalAlignment(VerticalAlignment.Top)
+                            .VerticalContentAlignment(VerticalAlignment.Top)
+                            .HorizontalContentAlignment(HorizontalAlignment.Stretch)
+                            .HorizontalAlignment(HorizontalAlignment.Stretch)
+                            .Name("Header")
+                            .RegionManager(regionName: "HeaderRegion"),
+                        new ScrollViewer()
+                            .Content(
+                                new ContentControl()
+                                    .HorizontalContentAlignment(HorizontalAlignment.Stretch)
+                                    .HorizontalAlignment(HorizontalAlignment.Stretch)
+                                    .Name("Body")
+                                    .RegionManager(regionName: "BodyRegion")
+                            )
+                            .Grid(row: 1)
                     )
-                    .Grid(row: 1)
-            ));
+            );
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+        }
     }
 }
