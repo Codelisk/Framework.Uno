@@ -4,16 +4,12 @@
   <PropertyGroup>
     <DotNetVersion>net8.0</DotNetVersion>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-
-    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
 
     <DebugType>portable</DebugType>
     <DebugSymbols>True</DebugSymbols>
-	
-    <IsWinAppSdk>false</IsWinAppSdk>
   </PropertyGroup>
 
 </Project>
