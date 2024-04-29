@@ -2,14 +2,11 @@
   <Import Project="Directory.Packages.props" Condition="exists('Directory.Packages.props')" />
 
   <PropertyGroup>
-    <DotNetVersion>net8.0</DotNetVersion>
+    <NetVersion>net8.0</NetVersion>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
-
-    <DebugType>portable</DebugType>
-    <DebugSymbols>True</DebugSymbols>
   </PropertyGroup>
 
 </Project>

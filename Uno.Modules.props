@@ -1,4 +1,16 @@
 <Project>
+    
+  <PropertyGroup>
+    <TargetFrameworks>
+      $(NetVersion);
+      $(NetVersion)-android;
+      $(NetVersion)-ios;
+      $(NetVersion)-maccatalyst;
+      $(NetVersion)-windows10.0.19041;
+      $(NetVersion)-desktop;
+    </TargetFrameworks>
+  </PropertyGroup>
+  
 	<ItemGroup>
     <PackageReference Include="AsyncAwaitBestPractices" />
     <PackageReference Include="ReactiveUI" />
