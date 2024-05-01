@@ -20,14 +20,11 @@ namespace Framework.UnoNative
 {
     public partial class BaseApp : PrismApplication
     {
-        public static Window _window;
-
         protected override void ConfigureWindow(Window window)
         {
-            _window = window;
             //this.Container.Resolve<IMainWindowProvider<Window>>();
 #if DEBUG
-            //window.EnableHotReload();
+            window.EnableHotReload();
 #endif
         }
 
