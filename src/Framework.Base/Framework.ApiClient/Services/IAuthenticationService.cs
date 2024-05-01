@@ -1,4 +1,4 @@
-﻿using Framework.ApiClient.Models;
+using Framework.ApiClient.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +9,9 @@ namespace Framework.ApiClient.Services
 {
     public interface IAuthenticationService
     {
-        Task<bool> AuthenticateAndCacheTokenAsync(AuthPayload auth);
-        Task<bool> RefreshAndCacheTokenAsync();
-        Task<bool> RegisterAsync(string email, string password);
+        ValueTask<AuthResult> AuthenticateAndCacheTokenAsync(AuthPayload auth);
+        ValueTask<bool> RefreshAndCacheTokenAsync();
+        ValueTask<AuthResult> RegisterAsync(string email, string password);
+        ValueTask<bool> IsAuthenticatedAsync();
     }
 }

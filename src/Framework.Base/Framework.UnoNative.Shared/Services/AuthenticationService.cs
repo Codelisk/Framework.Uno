@@ -1,4 +1,4 @@
-﻿using Framework.ApiClient.Models;
+using Framework.ApiClient.Models;
 using Framework.ApiClient.Repositories;
 using Framework.ApiClient.Services;
 using System;
@@ -14,46 +14,39 @@ namespace Framework.UnoNative.Services
         private const string AuthProvider = "AuthProvider";
         private const string AccessTokenKey = "AccessTokenKey";
         private readonly ITokenProvider _tokenProvider;
-        private readonly ITokenCache _tokenCache;
-        private readonly IKeyValueStorage _keyValueStorage;
         private readonly IDispatcher _dispatcher;
         private readonly Uno.Extensions.Authentication.IAuthenticationService _authenticationService;
         private readonly IAuthRepository _authRepository;
 
-        public AuthenticationService(IDispatcher dispatcher, Uno.Extensions.Authentication.IAuthenticationService authenticationService, IAuthRepository authRepository, IKeyValueStorage keyValueStorage, ITokenProvider tokenProvider, ITokenCache tokenCache)
+        public AuthenticationService(IDispatcher dispatcher, IAuthRepository authRepository, ITokenProvider tokenProvider)
         {
             _dispatcher = dispatcher;
-            _authenticationService = authenticationService;
             _authRepository = authRepository;
-            _keyValueStorage = keyValueStorage;
             _tokenProvider = tokenProvider;
-            _tokenCache = tokenCache;
         }
 
-        public async Task<bool> RegisterAsync(string email, string password)
+        public async ValueTask<AuthResult> RegisterAsync(string email, string password)
         {
             var authResult = await _authRepository.RegisterAndLoginAsync(new AuthPayload() { email = email, password = password });
-            await _authenticationService.LoginAsync(_dispatcher, new Dictionary<string, string>
-            {
-                { "email", email},
-                { "password", password}
-            });
-            return true;
+            return authResult;
         }
 
-        public async Task<bool> AuthenticateAndCacheTokenAsync(AuthPayload auth)
+        public async ValueTask<AuthResult> AuthenticateAndCacheTokenAsync(AuthPayload auth)
         {
-            return await _authenticationService.LoginAsync(_dispatcher, new Dictionary<string, string>()
-            {
-                { "email", auth.email},
-                { "password", auth.password}
-            });
+            var authenticated = await _authRepository.LoginAsync(auth);
+            _tokenProvider.UpdateToken(authenticated.accessToken, authenticated.refreshToken);
+            return authenticated;
         }
 
-        public async Task<bool> RefreshAndCacheTokenAsync()
+        public async ValueTask<bool> RefreshAndCacheTokenAsync()
         {
             var result = await _authenticationService.RefreshAsync();
             return result;
+        }
+
+        public async ValueTask<bool> IsAuthenticatedAsync()
+        {
+            return true;
         }
     }
 }

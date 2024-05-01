@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,7 +46,7 @@ namespace Framework.ApiClient.Services.Helper
 
         public string GetRestUrl()
         {
-            return "https://ooeentwickler.azurewebsites.net/"; //Constants.RestUrl;
+            return "https://localhost:7154"; //Constants.RestUrl;
         }
     }
 }
