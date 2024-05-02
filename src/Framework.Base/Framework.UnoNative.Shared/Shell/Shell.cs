@@ -7,6 +7,7 @@ public sealed partial class Shell : Page
             this.Content(
                 new Grid()
                     .HorizontalAlignment(HorizontalAlignment.Stretch)
+                    .VerticalAlignment(VerticalAlignment.Stretch)
                     .RowDefinitions("auto,*")
                     .ColumnDefinitions("*")
                     .Children(
@@ -20,6 +21,8 @@ public sealed partial class Shell : Page
                         new ScrollViewer()
                             .Content(
                                 new ContentControl()
+                                    .VerticalAlignment(VerticalAlignment.Stretch)
+                                    .VerticalContentAlignment(VerticalAlignment.Stretch)
                                     .HorizontalContentAlignment(HorizontalAlignment.Stretch)
                                     .HorizontalAlignment(HorizontalAlignment.Stretch)
                                     .Name("Body")
