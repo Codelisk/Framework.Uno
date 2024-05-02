@@ -1,5 +1,4 @@
 <Project Sdk="Uno.Sdk">
-
   
   <Import Project="Uno.Modules.props" Condition="exists('Uno.Modules.props')" />
   <Import Project="..\Uno.Modules.props" Condition="exists('..\Uno.Modules.props')" />
@@ -11,31 +10,13 @@
   <Import Project="..\..\..\..\..\..\..\Uno.Modules.props" Condition="exists('..\..\..\..\..\..\..\Uno.Modules.props')" />
   <Import Project="..\..\..\..\..\..\..\..\Uno.Modules.props" Condition="exists('..\..\..\..\..\..\..\..\Uno.Modules.props')" />
 
-  <ItemGroup>
-    <PackageReference Include="Prism.Uno.WinUI" />
-    <PackageReference Include="Prism.DryIoc.Uno.WinUI" />
-    <PackageReference Include="ReactiveUI.Uno.WinUI" />
-    <PackageReference Include="Uno.Material.WinUI.Markup" />
-    <PackageReference Include="Uno.Themes.WinUI.Markup" />
-    <PackageReference Include="Uno.Toolkit.WinUI.Markup" />
-    <PackageReference Include="Uno.Toolkit.WinUI.Material" />
 
+  <ItemGroup>
+    <PackageReference Include="ReactiveUI.Fody" />
     <PackageReference Include="ReactiveUI.Uno.WinUI" />
-    <PackageReference Include="Prism.Uno.WinUI" />
-    <PackageReference Include="Prism.Uno.WinUI.Markup" />
-    <PackageReference Include="Prism.DryIoc.Uno.WinUI" />
     <PackageReference Include="SkiaSharp.Views.Uno.WinUI" />
     <PackageReference Include="SkiaSharp.Skottie" />
     <PackageReference Include="Uno.Resizetizer" />
-    <PackageReference Include="Uno.Extensions.Authentication.WinUI" />
-    <PackageReference Include="Uno.Extensions.Markup.Generators" />
-
-    <PackageReference Include="Uno.Material.WinUI.Markup" />
-    <PackageReference Include="Uno.Themes.WinUI.Markup" />
-    <PackageReference Include="Uno.Toolkit.WinUI.Markup" />
-    <PackageReference Include="Uno.Toolkit.WinUI.Material" />
-    <PackageReference Include="Uno.Extensions.Logging.WinUI" />
-    <PackageReference Include="Uno.Extensions.Localization.WinUI" />
   </ItemGroup>
 
   <ItemGroup>

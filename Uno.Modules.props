@@ -9,6 +9,20 @@
       $(NetVersion)-windows10.0.19041;
       $(NetVersion)-desktop;
     </TargetFrameworks>
+	
+	
+    <UnoFeatures>
+      Material;
+      Authentication;
+      Storage;
+      Extensions;
+      CSharpMarkup;
+      Prism;
+      Toolkit;
+      Lottie;
+      Logging;
+      Localization;
+    </UnoFeatures>
   </PropertyGroup>
   
 	<ItemGroup>
