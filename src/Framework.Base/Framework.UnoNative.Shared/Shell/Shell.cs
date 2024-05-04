@@ -18,16 +18,13 @@ public sealed partial class Shell : Page
                             .HorizontalAlignment(HorizontalAlignment.Stretch)
                             .Name("Header")
                             .RegionManager(regionName: "HeaderRegion"),
-                        new ScrollViewer()
-                            .Content(
-                                new ContentControl()
-                                    .VerticalAlignment(VerticalAlignment.Stretch)
-                                    .VerticalContentAlignment(VerticalAlignment.Stretch)
-                                    .HorizontalContentAlignment(HorizontalAlignment.Stretch)
-                                    .HorizontalAlignment(HorizontalAlignment.Stretch)
-                                    .Name("Body")
-                                    .RegionManager(regionName: "BodyRegion")
-                            )
+                        new ContentControl()
+                            .VerticalAlignment(VerticalAlignment.Stretch)
+                            .VerticalContentAlignment(VerticalAlignment.Stretch)
+                            .HorizontalContentAlignment(HorizontalAlignment.Stretch)
+                            .HorizontalAlignment(HorizontalAlignment.Stretch)
+                            .Name("Body")
+                            .RegionManager(regionName: "BodyRegion")
                             .Grid(row: 1)
                     )
             );
