@@ -27,30 +27,32 @@ namespace Framework.UnoNative.Views.Pages
 
         public UserControl SetupPage(Action<UserControl, T> configureElement)
         {
-            try
-            {
-                var result = this.DataContext<T>(
-                    (page, vm) =>
-                        page.Assign(out root)
-                            .HorizontalAlignment(HorizontalAlignment.Stretch)
-                            .Content(
-                                new Grid()
-                                    .HorizontalAlignment(HorizontalAlignment.Stretch)
-                                    .Children(
-                                        new UserControl()
-                                            .DataContext(configureElement)
-                                            .HorizontalAlignment(HorizontalAlignment.Stretch)
-                                    )
-                            )
-                );
-
-                return result;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-                throw ex;
-            }
+            return this.DataContext<T>(
+                (page, vm) =>
+                    page.Assign(out root)
+                        .HorizontalAlignment(HorizontalAlignment.Stretch)
+                        .Content(
+                            new Grid()
+                                .HorizontalAlignment(HorizontalAlignment.Stretch)
+                                .Children(
+                                    new ProgressRing()
+                                        .Width(100)
+                                        .Height(100)
+                                        .Visibility(x =>
+                                            x.Bind(() => vm.IsBusy)
+                                                .Convert(
+                                                    (x) =>
+                                                        x
+                                                            ? Visibility.Visible
+                                                            : Visibility.Collapsed
+                                                )
+                                        ),
+                                    new UserControl()
+                                        .DataContext(configureElement)
+                                        .HorizontalAlignment(HorizontalAlignment.Stretch)
+                                )
+                        )
+            );
         }
     }
 }
