@@ -1,16 +1,17 @@
-﻿using Codelisk.GeneratorAttributes.WebAttributes.HttpMethod;
-using Framework.ApiClient.Apis.Base;
-using Framework.ApiClient.Services.Helper;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Codelisk.GeneratorAttributes.WebAttributes.HttpMethod;
+using Framework.ApiClient.Apis.Base;
+using Framework.ApiClient.Services.Helper;
+using Microsoft.Extensions.Logging;
 
 namespace Framework.ApiClient.Repositories.Base
 {
-    public abstract class BaseRepository<TApi> where TApi : IBaseApi
+    public abstract class BaseRepository<TApi>
+        where TApi : IBaseApi
     {
         protected readonly TApi _repositoryApi;
 
@@ -19,18 +20,22 @@ namespace Framework.ApiClient.Repositories.Base
 
         protected BaseRepository(BaseRepositoryContainer baseRepositoryContainer)
         {
-            _repositoryApi = baseRepositoryContainer.ApiBuilder.BuildRestService<TApi>(GetAuthorizationHeaderValueAsync);
+            _repositoryApi = baseRepositoryContainer.ApiBuilder.BuildRestService<TApi>(
+                GetAuthorizationHeaderValueAsync
+            );
             _logger = baseRepositoryContainer.Logger;
 
             _baseRepositoryContainer = baseRepositoryContainer;
         }
 
-
         /// <summary>
         /// Here we provide the Auth token for requests
         /// </summary>
         /// <returns>Current access token</returns>
-        protected virtual Task<string> GetAuthorizationHeaderValueAsync(HttpRequestMessage message, CancellationToken token)
+        protected virtual Task<string> GetAuthorizationHeaderValueAsync(
+            HttpRequestMessage message,
+            CancellationToken token
+        )
         {
             return Task.FromResult(_baseRepositoryContainer.TokenProvider.GetCurrentAccessToken());
         }
@@ -49,7 +54,10 @@ namespace Framework.ApiClient.Repositories.Base
         [GetAll]
         [GetFull]
         [GetAllFull]
-        protected virtual async Task<T> TryRequest<T>(Func<Task<T>> func, T defaultValue = default(T))
+        protected virtual async Task<T> TryRequest<T>(
+            Func<Task<T>> func,
+            T defaultValue = default(T)
+        )
         {
             var result = await func().ConfigureAwait(false);
             return result;
