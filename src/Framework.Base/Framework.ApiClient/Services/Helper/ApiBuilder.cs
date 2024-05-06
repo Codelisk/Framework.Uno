@@ -46,7 +46,7 @@ namespace Framework.ApiClient.Services.Helper
 
         public string GetRestUrl()
         {
-            return "https://localhost:7154"; //Constants.RestUrl;
+            return "https://codeliskchatsupporterwebapi.azurewebsites.net"; //Constants.RestUrl;
         }
     }
 }

@@ -28,6 +28,5 @@
 	<ItemGroup>
     <PackageReference Include="AsyncAwaitBestPractices" />
     <PackageReference Include="ReactiveUI" />
-    <PackageReference Include="Prism.Core" />
 	</ItemGroup>
 </Project>

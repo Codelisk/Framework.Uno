@@ -14,9 +14,6 @@
   <ItemGroup>
     <PackageReference Include="ReactiveUI.Fody" />
     <PackageReference Include="ReactiveUI.Uno.WinUI" />
-    <PackageReference Include="SkiaSharp.Views.Uno.WinUI" />
-    <PackageReference Include="SkiaSharp.Skottie" />
-    <PackageReference Include="Uno.Resizetizer" />
   </ItemGroup>
 
   <ItemGroup>
