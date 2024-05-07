@@ -10,6 +10,7 @@ public sealed partial class Shell : Page
                     .VerticalAlignment(VerticalAlignment.Stretch)
                     .RowDefinitions("auto,*")
                     .ColumnDefinitions("*")
+                    .Margin(10)
                     .Children(
                         new ContentControl()
                             .VerticalAlignment(VerticalAlignment.Top)

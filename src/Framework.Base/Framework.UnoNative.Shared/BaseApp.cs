@@ -31,6 +31,7 @@ namespace Framework.UnoNative
         protected override void ConfigureHost(IHostBuilder builder)
         {
             builder
+                .UseStorage()
                 .UseLogging(
                     configure: (context, logBuilder) =>
                     {
