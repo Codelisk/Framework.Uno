@@ -16,6 +16,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.UI.Xaml.Automation.Provider;
 using Uno.Extensions.Markup.Generator;
+using Uno.Resizetizer;
 
 namespace Framework.UnoNative
 {
@@ -23,10 +24,12 @@ namespace Framework.UnoNative
     {
         protected override void ConfigureWindow(Window window)
         {
-            //this.Container.Resolve<IMainWindowProvider<Window>>();
+            base.ConfigureWindow(window);
+
 #if DEBUG
             window.EnableHotReload();
 #endif
+            window.SetWindowIcon();
         }
 
         protected override void ConfigureHost(IHostBuilder builder)
