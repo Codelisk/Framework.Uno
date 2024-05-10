@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Framework.Mvvm.Constants;
+using Framework.Mvvm.Models;
 using Framework.Services.Services.Vms;
 
 namespace Framework.Mvvm.ViewModels
@@ -29,6 +30,8 @@ namespace Framework.Mvvm.ViewModels
             _vmServices = vmServices;
         }
 
+        protected virtual List<RegionNavigationModel> RegionsToUse => null;
+
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
             return true;
@@ -43,6 +46,18 @@ namespace Framework.Mvvm.ViewModels
         public override void Initialize(NavigationContext navigationContext)
         {
             this.FirstSetup(navigationContext);
+
+            if (RegionsToUse is not null)
+            {
+                foreach (var region in RegionsToUse)
+                {
+                    _vmServices.RegionManager.RequestNavigate(
+                        region.RegionName,
+                        region.RegionView,
+                        region.Parameters
+                    );
+                }
+            }
         }
 
         public override void OnNavigatedFrom(NavigationContext navigationContext)
