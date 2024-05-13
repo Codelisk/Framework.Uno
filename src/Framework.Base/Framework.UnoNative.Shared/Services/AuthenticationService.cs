@@ -1,11 +1,11 @@
-using Framework.ApiClient.Models;
-using Framework.ApiClient.Repositories;
-using Framework.ApiClient.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Framework.ApiClient.Models;
+using Framework.ApiClient.Repositories;
+using Framework.ApiClient.Services;
 
 namespace Framework.UnoNative.Services
 {
@@ -18,7 +18,11 @@ namespace Framework.UnoNative.Services
         private readonly Uno.Extensions.Authentication.IAuthenticationService _authenticationService;
         private readonly IAuthRepository _authRepository;
 
-        public AuthenticationService(IDispatcher dispatcher, IAuthRepository authRepository, ITokenProvider tokenProvider)
+        public AuthenticationService(
+            IDispatcher dispatcher,
+            IAuthRepository authRepository,
+            ITokenProvider tokenProvider
+        )
         {
             _dispatcher = dispatcher;
             _authRepository = authRepository;
@@ -27,7 +31,9 @@ namespace Framework.UnoNative.Services
 
         public async ValueTask<AuthResult> RegisterAsync(string email, string password)
         {
-            var authResult = await _authRepository.RegisterAndLoginAsync(new AuthPayload() { email = email, password = password });
+            var authResult = await _authRepository.RegisterAndLoginAsync(
+                new AuthPayload() { email = email, password = password }
+            );
             return authResult;
         }
 
@@ -40,8 +46,11 @@ namespace Framework.UnoNative.Services
 
         public async ValueTask<bool> RefreshAndCacheTokenAsync()
         {
-            var result = await _authenticationService.RefreshAsync();
-            return result;
+            var authenticated = await _authRepository.RefreshAsync(
+                _tokenProvider.GetCurrentRefreshToken()
+            );
+            _tokenProvider.UpdateToken(authenticated.accessToken, authenticated.refreshToken);
+            return true;
         }
 
         public async ValueTask<bool> IsAuthenticatedAsync()
