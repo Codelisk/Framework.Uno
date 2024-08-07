@@ -9,25 +9,21 @@
   <Import Project="..\..\..\..\..\..\..\Library.props" Condition="exists('..\..\..\..\..\..\..\Library.props')" />
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" />
     <PackageReference Include="Polly" />
     <PackageReference Include="Refit" />
     <PackageReference Include="Refit.Newtonsoft.Json" />
     <PackageReference Include="Microsoft.Extensions.Logging" />
-    <PackageReference Include="Refitter.SourceGenerator">
+    <!--<PackageReference Include="Refitter.Core" />-->
+    <!--<PackageReference Include="Refitter.SourceGenerator">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    </PackageReference>-->
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\..\..\..\..\Downloads\refitter-main\refitter-main\src\Refitter.SourceGenerator\Refitter.SourceGenerator.csproj" PrivateAssets="all" OutputItemType="Analyzer" />
     <ProjectReference Include="..\..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Common\Codelisk.GeneratorAttributes\Codelisk.GeneratorAttributes.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <AdditionalFiles Include="AdditionalFiles\*.refitter" />
-    <None Remove="Resources\openapi.json" />
-    <EmbeddedResource Include="Resources\openapi.json" />
-    <Folder Include="AdditionalFiles\Generated\" />
   </ItemGroup>
 
 </Project>

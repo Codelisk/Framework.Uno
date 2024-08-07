@@ -10,12 +10,14 @@
   <ItemGroup Label="Global Package versions">
     <PackageVersion Include="AutoMapper" Version="12.0.1" />
     <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="$(MicrosoftAspNetCore)" />
+    <PackageVersion Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="$(MicrosoftExtensionsVersion)" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(MicrosoftExtensionsVersion)" />
     <PackageVersion Include="Moq" Version="4.20.69" />
     <PackageVersion Include="ReactiveUI.Fody" Version="19.5.41" />
     <PackageVersion Include="ReactiveUI.Uno.WinUI" Version="19.1.34" />
-    <PackageVersion Include="Refitter.SourceGenerator" Version="1.2.0-preview.53" />
+    <PackageVersion Include="Refitter.Core" Version="1.1.3" />
+    <PackageVersion Include="Refitter.SourceGenerator" Version="1.1.3" />
   </ItemGroup>
   <ItemGroup>
     <PackageVersion Include="Azure.AI.OpenAI" Version="1.0.0-beta.16" />
