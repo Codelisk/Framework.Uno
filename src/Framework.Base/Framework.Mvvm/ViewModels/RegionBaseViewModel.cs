@@ -46,18 +46,6 @@ namespace Framework.Mvvm.ViewModels
         public override void Initialize(NavigationContext navigationContext)
         {
             this.FirstSetup(navigationContext);
-
-            if (RegionsToUse is not null)
-            {
-                foreach (var region in RegionsToUse)
-                {
-                    _vmServices.RegionManager.RequestNavigate(
-                        region.RegionName,
-                        region.RegionView,
-                        region.Parameters
-                    );
-                }
-            }
         }
 
         public override void OnNavigatedFrom(NavigationContext navigationContext)
@@ -83,6 +71,23 @@ namespace Framework.Mvvm.ViewModels
 
             this.Initialized = true;
             this.IsBusy = false;
+            InitRegionsAsync();
+        }
+
+        private async void InitRegionsAsync()
+        {
+            if (RegionsToUse is not null)
+            {
+                await Task.Delay(300);
+                foreach (var region in RegionsToUse)
+                {
+                    _vmServices.RegionManager.RequestNavigate(
+                        region.RegionName,
+                        region.RegionView,
+                        region.Parameters
+                    );
+                }
+            }
         }
 
         protected virtual INavigationParameters AddBaseValuesToParametersForNavigationToRegion(

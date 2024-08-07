@@ -13,10 +13,21 @@
     <PackageReference Include="Refit" />
     <PackageReference Include="Refit.Newtonsoft.Json" />
     <PackageReference Include="Microsoft.Extensions.Logging" />
+    <PackageReference Include="Refitter.SourceGenerator">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Common\Codelisk.GeneratorAttributes\Codelisk.GeneratorAttributes.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\..\..\submodules\Framework.Restservice\submodules\CodeGen\src\Common\Codelisk.GeneratorAttributes\Codelisk.GeneratorAttributes.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="AdditionalFiles\*.refitter" />
+    <None Remove="Resources\openapi.json" />
+    <EmbeddedResource Include="Resources\openapi.json" />
+    <Folder Include="AdditionalFiles\Generated\" />
   </ItemGroup>
 
 </Project>
