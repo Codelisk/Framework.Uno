@@ -1,11 +1,11 @@
-﻿using AsyncAwaitBestPractices;
-using ReactiveUI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using AsyncAwaitBestPractices;
+using ReactiveUI;
 
 namespace Framework.Mvvm.ViewModels
 {
@@ -17,17 +17,16 @@ namespace Framework.Mvvm.ViewModels
             get { return isBusy; }
             set { this.RaiseAndSetIfChanged(ref isBusy, value); }
         }
-        public BaseBaseVm()
-        {
-        }
+
+        public BaseBaseVm() { }
 
         #region LoadingCommand without parameters
-        protected virtual ICommand LoadingCommand(Func<Task> taskFunc) => new DelegateCommand(() =>
-            this.LoadingAsync(taskFunc).SafeFireAndForget()
-        );
-        protected virtual ICommand BlockCommand(Func<Task> taskFunc) => new DelegateCommand(() =>
-            this.LoadingAsync(taskFunc, true).SafeFireAndForget()
-        );
+        protected virtual ICommand LoadingCommand(Func<Task> taskFunc) =>
+            new DelegateCommand(() => this.LoadingAsync(taskFunc).SafeFireAndForget());
+
+        protected virtual ICommand BlockCommand(Func<Task> taskFunc) =>
+            new DelegateCommand(() => this.LoadingAsync(taskFunc, true).SafeFireAndForget());
+
         protected virtual async Task LoadingAsync(Func<Task> taskFunc, bool blockOnly = false)
         {
             if (this.IsBusyOrLocked())
@@ -49,13 +48,17 @@ namespace Framework.Mvvm.ViewModels
         #endregion
         #region LoadingCommand with parameters
 
-        protected virtual ICommand LoadingCommand<T>(Func<T, Task> taskFunc) => new DelegateCommand<T>((o) =>
-            this.LoadingAsync(taskFunc, o).SafeFireAndForget()
-        );
-        protected virtual ICommand BlockCommand<T>(Func<T, Task> taskFunc) => new DelegateCommand<T>((o) =>
-            this.LoadingAsync(taskFunc, o, true).SafeFireAndForget()
-        );
-        protected virtual async Task LoadingAsync<T>(Func<T, Task> taskFunc, T o, bool blockOnly = false)
+        protected virtual ICommand LoadingCommand<T>(Func<T, Task> taskFunc) =>
+            new DelegateCommand<T>((o) => this.LoadingAsync(taskFunc, o).SafeFireAndForget());
+
+        protected virtual ICommand BlockCommand<T>(Func<T, Task> taskFunc) =>
+            new DelegateCommand<T>((o) => this.LoadingAsync(taskFunc, o, true).SafeFireAndForget());
+
+        protected virtual async Task LoadingAsync<T>(
+            Func<T, Task> taskFunc,
+            T o,
+            bool blockOnly = false
+        )
         {
             if (this.IsBusyOrLocked())
             {
@@ -76,6 +79,7 @@ namespace Framework.Mvvm.ViewModels
         #endregion
         #region Loading and Blocking Helper
         private bool IsBlocked;
+
         private void SetBlockingAndBusy(bool val, bool blockOnly = false)
         {
             this.IsBlocked = val;
@@ -85,11 +89,11 @@ namespace Framework.Mvvm.ViewModels
                 this.IsBusy = val;
             }
         }
+
         private bool IsBusyOrLocked()
         {
             return this.IsBlocked || this.IsBusy;
         }
         #endregion
-
     }
 }

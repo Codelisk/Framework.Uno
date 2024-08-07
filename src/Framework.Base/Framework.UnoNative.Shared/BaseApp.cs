@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Codelisk.ChatSupporter;
 using Framework.ApiClient;
 using Framework.ApiClient.Models;
 using Framework.ApiClient.Repositories;
@@ -140,7 +139,6 @@ namespace Framework.UnoNative
         protected override void ConfigureApp(IApplicationBuilder builder)
         {
             base.ConfigureApp(builder);
-            Resources.Build(r => r.Merged(new AppResources()));
         }
 
         protected override UIElement CreateShell()
