@@ -3,12 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Framework.ApiClient;
-using Framework.ApiClient.Models;
-using Framework.ApiClient.Repositories;
-using Framework.ApiClient.Services;
 using Framework.Services.Services.Application;
-using Framework.UnoNative.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -88,29 +83,12 @@ namespace Framework.UnoNative
                                         cancellationToken
                                     ) =>
                                     {
-                                        var auth = sp.GetService<IAuthRepository>();
-                                        var tokenProvider = sp.GetService<ITokenProvider>();
-                                        credentials.TryGetValue("email", out var email);
-                                        credentials.TryGetValue("password", out var password);
-                                        var authenticated = await auth.LoginAsync(
-                                            new AuthPayload { email = email, password = password }
-                                        );
-                                        tokenProvider.UpdateToken(
-                                            authenticated.accessToken,
-                                            authenticated.refreshToken
-                                        );
-                                        credentials["AccessToken"] = authenticated.accessToken;
-                                        credentials["RefreshToken"] = authenticated.refreshToken;
-                                        return credentials;
+                                        return default;
                                     }
                                 )
                                 .Refresh(
                                     async (sp, tokenCache, credentials, cancellationToken) =>
                                     {
-                                        var tokenProvider = sp.GetService<ITokenProvider>();
-                                        var token = await tokenCache.AccessTokenAsync();
-                                        var rToken = await tokenCache.RefreshTokenAsync();
-                                        tokenProvider.UpdateToken(token, rToken);
                                         return default;
                                     }
                                 ),
