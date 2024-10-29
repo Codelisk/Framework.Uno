@@ -1,12 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <Import Project="Modules.props" Condition="exists('Modules.props')" />
-  <Import Project="..\Modules.props" Condition="exists('..\Modules.props')" />
-  <Import Project="..\..\Modules.props" Condition="exists('..\..\Modules.props')" />
-  <Import Project="..\..\..\Modules.props" Condition="exists('..\..\..\Modules.props')" />
-  <Import Project="..\..\..\..\Modules.props" Condition="exists('..\..\..\..\Modules.props')" />
-  <Import Project="..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\Modules.props')" />
-  <Import Project="..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\Modules.props')" />
-  <Import Project="..\..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\..\Modules.props')" />
-  <Import Project="..\..\..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\..\..\Modules.props')" />
+    <PropertyGroup>
+        <TargetFramework>$(NetVersion)</TargetFramework>
+    </PropertyGroup>
+	<ItemGroup>
+    <PackageReference Include="AsyncAwaitBestPractices" />
+    <PackageReference Include="ReactiveUI" />
+    <PackageReference Include="Prism.Core" />
+	</ItemGroup>
 </Project>

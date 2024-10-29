@@ -9,10 +9,6 @@
     <Import_RootNamespace>Framework.UnoNative.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)AppConfig.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BaseApp.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\AuthenticationService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Shell\Shell.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Shell\ShellViewModel.cs" />
   </ItemGroup>
 </Project>

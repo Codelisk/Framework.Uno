@@ -1,12 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <Import Project="..\Library.props" Condition="exists('..\Library.props')" />
-  <Import Project="..\..\Library.props" Condition="exists('..\..\Library..props')" />
-  <Import Project="..\..\..\Library.props" Condition="exists('..\..\..\Library.props')" />
-  <Import Project="..\..\..\..\Library.props" Condition="exists('..\..\..\..\Library.props')" />
-  <Import Project="..\..\..\..\..\Library.props" Condition="exists('..\..\..\..\..\Library.props')" />
-  <Import Project="..\..\..\..\..\..\Library.props" Condition="exists('..\..\..\..\..\..\Library.props')" />
-  <Import Project="..\..\..\..\..\..\..\Library.props" Condition="exists('..\..\..\..\..\..\..\Library.props')" />
+    
+    <PropertyGroup>
+        <TargetFramework>$(NetVersion)</TargetFramework>
+    </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Polly" />

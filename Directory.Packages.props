@@ -15,6 +15,7 @@
     <PackageVersion Include="ReactiveUI.Uno.WinUI" Version="20.0.36" />
   </ItemGroup>
   <ItemGroup>
+    <PackageVersion Include="Uno.Wasm.Bootstrap.Server" Version="9.0.0-dev.309" />
     <PackageVersion Include="Azure.AI.OpenAI" Version="1.0.0-beta.16" />
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageVersion Include="Prism.Core" Version="$(Prism)" />

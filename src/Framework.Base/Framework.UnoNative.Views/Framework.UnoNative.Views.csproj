@@ -1,17 +1,17 @@
-<Project Sdk="Uno.Sdk">
-  
-  <Import Project="Uno.Modules.props" Condition="exists('Uno.Modules.props')" />
-  <Import Project="..\Uno.Modules.props" Condition="exists('..\Uno.Modules.props')" />
-  <Import Project="..\..\Uno.Modules.props" Condition="exists('..\..\Uno.Modules.props')" />
-  <Import Project="..\..\..\Uno.Modules.props" Condition="exists('..\..\..\Uno.Modules.props')" />
-  <Import Project="..\..\..\..\Uno.Modules.props" Condition="exists('..\..\..\..\Uno.Modules.props')" />
-  <Import Project="..\..\..\..\..\Uno.Modules.props" Condition="exists('..\..\..\..\..\Uno.Modules.props')" />
-  <Import Project="..\..\..\..\..\..\Uno.Modules.props" Condition="exists('..\..\..\..\..\..\Uno.Modules.props')" />
-  <Import Project="..\..\..\..\..\..\..\Uno.Modules.props" Condition="exists('..\..\..\..\..\..\..\Uno.Modules.props')" />
-  <Import Project="..\..\..\..\..\..\..\..\Uno.Modules.props" Condition="exists('..\..\..\..\..\..\..\..\Uno.Modules.props')" />
-
+﻿<Project Sdk="Uno.Sdk">
+    <PropertyGroup>
+    <TargetFrameworks>net9.0-windows10.0.19041;net9.0</TargetFrameworks>
+    <UnoFeatures>
+      Hosting;
+      Material;
+      CSharpMarkup;
+      Prism;
+    </UnoFeatures>
+  </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AsyncAwaitBestPractices" />
+    <PackageReference Include="ReactiveUI" />
     <PackageReference Include="ReactiveUI.Fody" />
     <PackageReference Include="ReactiveUI.Uno.WinUI" />
   </ItemGroup>
