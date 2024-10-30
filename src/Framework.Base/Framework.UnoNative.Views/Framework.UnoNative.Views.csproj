@@ -10,6 +10,9 @@
       Prism;
     </UnoFeatures>
   </PropertyGroup>
+    <ItemGroup>
+      <None Remove="Pages\RegionBasePage.xaml" />
+    </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AsyncAwaitBestPractices" />
@@ -20,5 +23,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Framework.Mvvm\Framework.Mvvm.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Pages\RegionBasePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 </Project>

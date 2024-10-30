@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Framework.Mvvm.ViewModels;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Uno.Extensions.Markup;
 
 namespace Framework.UnoNative.Views.Pages
 {
@@ -29,24 +30,37 @@ namespace Framework.UnoNative.Views.Pages
         {
             return this.DataContext<T>(
                 (page, vm) =>
+                {
+                    // ProgressRing mit Sichtbarkeitsbindung
+                    var progressRing = CreateProgressRing(vm);
+
+                    // Hauptinhalt mit konfiguriertem UserControl
+                    var contentControl = new UserControl()
+                        .HorizontalAlignment(HorizontalAlignment.Stretch)
+                        .Visibility(x =>
+                            x.Binding(() => vm.IsBusy)
+                                .Convert(isBusy =>
+                                    !isBusy ? Visibility.Visible : Visibility.Collapsed
+                                )
+                        );
+
+                    configureElement(contentControl, vm);
+
                     page.Assign(out root)
                         .HorizontalAlignment(HorizontalAlignment.Stretch)
-                        .Content(
-                            new Grid()
-                                .HorizontalAlignment(HorizontalAlignment.Stretch)
-                                .Children(
-                                    new ProgressRing().Visibility(x =>
-                                        x.Binding(() => vm.IsBusy)
-                                            .Convert(
-                                                (x) => x ? Visibility.Visible : Visibility.Collapsed
-                                            )
-                                    ),
-                                    new UserControl()
-                                        .DataContext(configureElement)
-                                        .HorizontalAlignment(HorizontalAlignment.Stretch)
-                                )
-                        )
+                        .Content(new Canvas().Children(progressRing, contentControl));
+                }
             );
+        }
+
+        private ProgressRing CreateProgressRing(T vm)
+        {
+            return new ProgressRing()
+                .HorizontalAlignment(HorizontalAlignment.Center)
+                .Visibility(x =>
+                    x.Binding(() => vm.IsBusy)
+                        .Convert(isBusy => isBusy ? Visibility.Visible : Visibility.Collapsed)
+                );
         }
     }
 }
