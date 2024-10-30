@@ -1,6 +1,8 @@
 ﻿<Project Sdk="Uno.Sdk">
     <PropertyGroup>
-    <TargetFrameworks>net9.0-windows10.0.19041;net9.0</TargetFrameworks>
+    <TargetFrameworks>$(NetVersion)-windows10.0.19041;$(NetVersion)-browserwasm</TargetFrameworks>
+    <UnoSingleProject>true</UnoSingleProject>
+    <OutputType>Library</OutputType>
     <UnoFeatures>
       Hosting;
       Material;

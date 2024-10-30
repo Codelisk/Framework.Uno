@@ -13,6 +13,7 @@
     <PackageVersion Include="Moq" Version="4.20.69" />
     <PackageVersion Include="ReactiveUI.Fody" Version="19.5.41" />
     <PackageVersion Include="ReactiveUI.Uno.WinUI" Version="20.0.36" />
+    <PackageVersion Include="Uno.Wasm.Bootstrap" Version="9.0.0-dev.122" />
   </ItemGroup>
   <ItemGroup>
     <PackageVersion Include="Uno.Wasm.Bootstrap.Server" Version="9.0.0-dev.309" />
