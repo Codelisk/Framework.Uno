@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Framework.Mvvm.Constants;
-using Framework.Mvvm.Models;
+using Framework.Services.Models;
 using Framework.Services.Services.Vms;
 
 namespace Framework.Mvvm.ViewModels
