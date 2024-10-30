@@ -35,18 +35,12 @@ namespace Framework.UnoNative.Views.Pages
                             new Grid()
                                 .HorizontalAlignment(HorizontalAlignment.Stretch)
                                 .Children(
-                                    new ProgressRing()
-                                        .Width(100)
-                                        .Height(100)
-                                        .Visibility(x =>
-                                            x.Bind(() => vm.IsBusy)
-                                                .Convert(
-                                                    (x) =>
-                                                        x
-                                                            ? Visibility.Visible
-                                                            : Visibility.Collapsed
-                                                )
-                                        ),
+                                    new ProgressRing().Visibility(x =>
+                                        x.Binding(() => vm.IsBusy)
+                                            .Convert(
+                                                (x) => x ? Visibility.Visible : Visibility.Collapsed
+                                            )
+                                    ),
                                     new UserControl()
                                         .DataContext(configureElement)
                                         .HorizontalAlignment(HorizontalAlignment.Stretch)

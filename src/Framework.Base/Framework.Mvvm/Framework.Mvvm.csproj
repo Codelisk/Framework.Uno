@@ -11,5 +11,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Framework.Services\Framework.Services.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\" />
+  </ItemGroup>
 
 </Project>
