@@ -8,5 +8,6 @@ namespace Framework.Mvvm.Extensions
 {
     internal class PrismExtensions
     {
+
     }
 }
